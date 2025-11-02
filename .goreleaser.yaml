@@ -58,9 +58,10 @@ signs:
   - cmd: cosign
     args:
       - "sign-blob"
-      - "--bundle=${artifact}.bundle"
-      - "${artifact}"
       - "--yes"
+      - "--bundle=${artifact}.bundle"
+      - "--output-signature=${signature}"
+      - "${artifact}"
     artifacts: checksum
     output: true
 
