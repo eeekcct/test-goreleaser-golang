@@ -53,14 +53,11 @@ sboms:
 
 signs:
   - cmd: cosign
-    env:
-     - COSIGN_EXPERIMENTAL=1
     args:
       - "sign-blob"
       - "--oidc-provider=github"
       - "--output-signature=${signature}"
       - "--output-certificate=${certificate}"
-      - "--bundle=${artifact}.bundle"
       - "${artifact}"
       - "--yes"
     artifacts: checksum
