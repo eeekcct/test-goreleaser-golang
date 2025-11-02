@@ -58,10 +58,6 @@ signs:
   - cmd: cosign
     args:
       - "sign-blob"
-      - "--use-signing-config=false"
-      - "--oidc-provider=github"
-      - "--output-signature=${signature}"
-      - "--output-certificate=${certificate}"
       - "--bundle=${artifact}.bundle"
       - "${artifact}"
       - "--yes"
