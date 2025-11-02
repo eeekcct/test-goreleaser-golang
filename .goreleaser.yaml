@@ -63,7 +63,7 @@ signs:
       - "--bundle=${artifact}.bundle"
       - "${artifact}"
       - "--yes"
-    artifact: checksum
+    artifacts: checksum
     output: true
 
 release:
