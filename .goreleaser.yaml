@@ -52,7 +52,7 @@ sboms:
     artifacts: source
 
 signs:
-  - cmd: consign
+  - cmd: cosign
     env:
      - COSIGN_EXPERIMENTAL=1
     args:
