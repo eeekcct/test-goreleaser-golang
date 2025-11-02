@@ -58,12 +58,15 @@ signs:
       - "--oidc-provider=github"
       - "--output-signature=${signature}"
       - "--output-certificate=${certificate}"
+      - "--bundle=${artifact}.bundle"
       - "${artifact}"
       - "--yes"
     artifacts: checksum
     output: true
 
 release:
+  extra_fiels:
+    - glob: dist/*.sig
   footer: >-
 
     ---
