@@ -12,7 +12,6 @@ jobs:
     outputs:
       hashes: ${{ steps.binary.outputs.hashes }}
     permissions:
-      actions: read
       contents: write
       id-token: write
     steps:
@@ -42,7 +41,7 @@ jobs:
           set -euo pipefail
 
           checksum_file=$(echo "$ARTIFACTS" | jq -r '.[] | select (.type="Checksum") | .path')
-          echo "hashes=$(cat $checksum_file | base64 -w0)" >> "$GITHUB_OUTPUT
+          echo "hashes=$(cat $checksum_file | base64 -w0)" >> "$GITHUB_OUTPUT"
       - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a # v3.0.0
         with:
           subject-path: |
