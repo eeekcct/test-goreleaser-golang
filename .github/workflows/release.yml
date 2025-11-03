@@ -83,7 +83,8 @@ jobs:
             fn=$(echo $line | cut -d ' ' -f2)
             echo "Downloading $fn"
             gh -R "$GITHUB_REPOSITORY" release download "$GITHUB_REF_NAME" -p "$fn"
-          done <<<"$checksums" 
+          done <<<"$checksums"
+          echo "Downloading provenance $PROVENANCE"
           gh -R "$GITHUB_REPOSITORY" release download "$GITHUB_REF_NAME" -p "$PROVENANCE"
       - name: Verify assets
         run: |
