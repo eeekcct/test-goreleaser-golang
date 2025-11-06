@@ -13,5 +13,3 @@ jobs:
       id-token: write
       actions: read
       attestations: write
-    with:
-      draft: false
